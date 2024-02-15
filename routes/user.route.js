@@ -19,7 +19,7 @@ userRouter.post("/adduser", async (req, res) => {
 
   console.log(name, email, phone, website, city, company, userId);
   await insertUser({ name, email, phone, website, city, company, userId });
-  res.send("User added in database");
+  res.send({ message: "User added in database" });
 });
 
 userRouter.get("/", async (req, res) => {
@@ -30,8 +30,6 @@ userRouter.get("/", async (req, res) => {
     console.log(error);
   }
 });
-
-//
 
 userRouter.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
