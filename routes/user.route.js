@@ -31,6 +31,8 @@ userRouter.get("/", async (req, res) => {
   }
 });
 
+//
+
 userRouter.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
   try {
